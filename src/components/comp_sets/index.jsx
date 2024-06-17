@@ -4,7 +4,6 @@ import logo from "../../assets/logo.png"
 export const NCNHeader = () => {
 
 function handleNavigation (e) {
-    
 
 }
 
