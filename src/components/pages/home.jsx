@@ -10,11 +10,11 @@ getAllArticles()
 export function Pg_Home() {
   return (
     <div className="appHome">
-      <div className="redContainer">
+      <div className="redContainer_home">
         <h1>What's New?</h1>
       </div>
 
-      <main>
+      <main className="home">
         
 
         <FetchFeaturedArticles/>
