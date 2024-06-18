@@ -1,42 +1,189 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 94.5rem;
+  height: 61.375rem;
+  padding-left: 4.56rem;
+  padding-top: 2.94rem;
+  position:relative;
+ 
+  
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.appHome {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 12.9rem;
+  flex-shrink: 0;
+  
+ 
+width: 83.125rem;
+height: 50.0625rem;
+
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3.5625rem;
+ 
+
+
+   
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+ul.NavBar {
+  
+  display: flex;
+  
+  align-items: flex-start;
+  gap: 3.5625rem;
+
 }
 
-.card {
-  padding: 2em;
+ul.featured{
+
+  display: flexbox;
+  flex-direction: row;
+  
 }
 
-.read-the-docs {
-  color: #888;
+
+li a {
+    text-decoration: none;
+    color: #4E4E4E;
+font-family: Inter;
+font-size: 2rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+
+}
+
+div.redContainer {
+  flex:1;
+  margin-left: 12rem;
+  
+  display: flex;
+  width: auto;
+  max-height: 2.13rem;
+  padding: 0.625rem;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+background: #E8372D;
+
+}
+
+h1 {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+}
+
+.profilePic {
+  width: 7.4375rem;
+  height: 8.25rem;
+  border-radius: 3.6875rem;
+
+}
+
+article{
+  display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 4.5625rem;
+}
+
+.articlePreview {
+  gap: 0.3125rem;
+  display: flex;
+  flex-direction: column;
+  
+   padding-right: 0rem;
+   margin-right: 0rem;
+  
+}
+
+h2.headline{
+  color: #333;
+
+font-family: Inter;
+font-size: 1.25rem;
+font-style: italic;
+font-weight: 500;
+line-height: normal;
+}
+
+p.body{
+
+  background-color: rgb(245, 245, 245);
+  color:#4E4E4E;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+main{
+
+  display: flexbox;
+  flex:row;
+}
+
+p.author {
+
+  color: #6C6C6C;
+font-family: Inter;
+font-size: 1.25rem;
+font-style: italic;
+font-weight: 400;
+line-height: normal;
+
+}
+
+div.likeFrame {
+  margin-left: 77.5rem;
+  display: inline-flex;
+  align-items: center;
+  margin-top: -1.5rem;
+}
+
+h3.likeCount{
+  color: #4E4E4E;
+  font-family: Inter;
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+
+h3.topicTag{
+  width: 83.125rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+flex-shrink: 0;
+color: #4E4E4E;
+font-family: Inter;
+font-size: 1.25rem;
+font-style: italic;
+font-weight: 500;
+line-height: normal;
+text-align: right;
+/* margin-left: 90%; */
+
+
+}
+
+main{
+
+  
+  margin-top: 1rem;
 }
