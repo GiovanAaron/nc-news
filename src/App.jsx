@@ -18,7 +18,7 @@ function App() {
 <Routes>
       <Route path="/" element={<Pg_Home />}/>
       <Route path="/articles" element={<Pg_Articles/>}/>
-      <Route path="/article/:articleid" element={<Pg_ArticleByID/>}/>
+      <Route path="/articles/:articleid" element={<Pg_ArticleByID/>}/>
       <Route path="/topics" element={<Pg_topics/>}/>
      
       
