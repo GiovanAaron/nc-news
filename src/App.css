@@ -109,6 +109,7 @@ h3.likeCount {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  
 }
 
 h3.topicTag {
@@ -182,6 +183,32 @@ p.articleText{
   background-color: #f4f4f4;
   white-space: pre-wrap;
 }
+p.comment{
+  
+  
+  padding: .7rem;
+  background-color: #f4f4f4;
+  white-space: pre-wrap;
+  display: flex;
+width: 100%
+padding: 0.625rem;
+height: auto;
+min-height: 4rem;
+align-items: center;
+gap: 0.625rem;
+}
+
+p.likeCount{
+
+  color: #4E4E4E;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-left: .5rem;
+}
+
 
 /* Like Frame */
 div.likeFrame {
@@ -206,11 +233,34 @@ div.likeInfo{
   align-self: flex-end;
 
 }
+div.likeInfo_comment{
+
+  display:flex;
+  flex-direction: row;
+  /* align-items: end; */
+  align-content: center;
+  align-self: center;
+  align-items: center;
+  
+}
+
+div.commentInfo {
+  display: flex;
+  align-items: flex-start;
+  /* gap: 33.0625rem; */
+  justify-content: space-between;
+}
 
 div.yourCommentBox{
   margin-top: 5rem;
   
   width:100%;
+}
+
+div.userComments{
+
+
+  margin-top: 3rem;
 }
 
 /* Main Sections */
@@ -241,6 +291,12 @@ img.articleThumb {
 
 }
 
+img.voteComment{
+  max-width: 2rem;
+  max-height: 2rem;
+
+}
+
 form.yourComment {
 display: flex;
 flex-direction:column;
@@ -250,18 +306,19 @@ width: 100%;
 
 }
 
-input.yourComment {
+textarea.yourComment {
 
   margin-top: 1rem;
   display: flex;
   justify-content:flex-start;
-  padding: 0.625rem;
-  width: 97.88%;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  width:99.8%;
   height: 6.6875rem;
  
-  
   border-radius: 0.75rem;
-border: 3px solid #D0D0D0;
+  
+border: .2rem solid #D0D0D0;
 
 }
 
@@ -283,4 +340,11 @@ font-size: 1rem;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
+}
+
+li.comment{
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid rgba(194, 194, 194, 0.726)
 }

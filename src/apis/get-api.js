@@ -24,3 +24,14 @@ export function getArticleByID(article_id){
 
     })
 }
+
+export function getAllCommentsByID(article_id){
+
+    return ncNewsApi
+    .get(`/articles/${article_id}/comments`)
+    .then(({data}) => {
+      
+      return data
+    })
+
+}
