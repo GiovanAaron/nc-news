@@ -2,7 +2,9 @@ import { useState } from "react";
 
 import thumbsUp from "../../assets/thumbs+up.svg";
 import { getAllArticles } from "../../apis/get-api";
-import { FetchFeaturedArticles } from "../comp_sets";
+import { FetchFeaturedArticles } from "../comp_sets/fetchFeaturedArticles";
+
+
 
 
 getAllArticles()
