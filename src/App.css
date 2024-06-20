@@ -127,8 +127,8 @@ h3.topicTag {
 
 /* Profile Picture */
 .profilePic {
-  width: 7.4375rem;
-  height: 8.25rem;
+  max-width: 7.4375rem;
+  max-height: 8.25rem;
   border-radius: 3.6875rem;
 }
 

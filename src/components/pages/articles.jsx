@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { FetchAllArticles } from "../comp_sets";
+import { FetchAllArticles } from "../comp_sets/fetchAllArticles";
+
 
 export function Pg_Articles (){
 
