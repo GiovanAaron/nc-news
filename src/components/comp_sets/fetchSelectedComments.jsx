@@ -8,7 +8,7 @@ import thumbsDown from "../../assets/thumbs+down.svg";
 
 
 
-export const FetchSelectedComments = () => {
+export const FetchSelectedComments = ({ORMyComment}) => {
 
   let { articleid } = useParams();
 
@@ -20,15 +20,39 @@ export const FetchSelectedComments = () => {
       setFetchedComments(comments)
     });
   }, []);
-
-  console.log(fetchedComments)
+  
 
   return (
 
     <div className="userComments">
+      {/* optimistic rendering */}
         <ul >
-          {fetchedComments.map((info) => {
+          {ORMyComment.body.slice(1).map((myComment, i)=> {
+          
+            return (
+            <li key={i} className="comment">
+              <p className="comment">
+                {myComment.comment}
+              </p>
+              <div className="commentInfo">
+                <div className="likeInfo_comment">
+                  <img className="voteComment" src={thumbsUp}></img><img className="voteComment" src={thumbsDown}></img><p className="likeCount">0</p>
+                </div>
+                <div style={{display:"flex", padding:"1rem"}}>
+                    <p>Me </p>
+                    <p style={{margin: "auto .5em"}}> @ </p>
+                    <p>Just Now</p>
+                </div>
+              </div>
+              <button style={{ maxWidth: "50%", marginLeft:"auto", marginBottom:"1rem"}}>delete comment</button>
+            </li>
+            )
+          })}
 
+          {/* true rendering */}
+          {fetchedComments.map((info) => {
+            
+            
             return (
               <li key={info.comment_id} className="comment">
             <p className="comment">

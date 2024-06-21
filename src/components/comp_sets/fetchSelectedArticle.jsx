@@ -36,17 +36,77 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
   }, []);
 
   function rateArticle(vote) {
+    if (vote === 1 && ORVote.upVClicked === true) return;
+    if (vote === -1 && ORVote.downVClicked === true) return;
+
     setORVote((prev) => {
-      if (vote === 1 && prev.clicked === false) {
-        patchArticleVote(articleid, vote);
-        return { ...prev, vote: prev.vote + 1, clicked: !prev.clicked };
-      } else if (vote === -1 && prev.clicked === false) {
-        patchArticleVote(articleid, vote);
-        return { ...prev, vote: prev.vote - 1, clicked: !prev.clicked };
-      } else {
-        return prev;
+      switch (prev.vote) {
+        case 1:
+          if (vote === 1) {
+            return {
+              ...prev,
+
+              //  upVClicked: !prev.upVClicked,
+              //  downVClicked: false
+              //maybe add downVcCLICKED to false
+            };
+          }
+          if (vote === -1)
+            return {
+              ...prev,
+              vote: prev.vote + vote,
+              downVClicked: !prev.downVClicked,
+              upVClicked: !prev.upVClicked,
+            };
+          break;
+
+        case -1:
+          if (vote === 1 && prev.upVClicked === false)
+            return {
+              ...prev,
+              vote: prev.vote + vote,
+              upVClicked: !prev.upVClicked,
+              downVClicked: !prev.downVClicked,
+            };
+          if (vote === -1) return { ...prev };
+
+          break;
+
+        case 0:
+          if (vote === 1)
+            return {
+              ...prev,
+              vote: prev.vote + vote,
+              upVClicked: !prev.upVClicked,
+              // downVClicked: true
+            };
+          if (vote === -1)
+            return {
+              ...prev,
+              vote: prev.vote + vote,
+              downVClicked: !prev.downVClicked,
+              // upVClicked:true
+            };
+
+          return prev;
       }
     });
+
+    patchArticleVote(articleid, vote)
+      .then((response) => {})
+      .then((err) => {});
+
+    // setORVote((prev) => {
+    //   if (vote === 1 && prev.clicked === false) {
+    //     patchArticleVote(articleid, vote);
+    //     return { ...prev, vote: prev.vote + vote, clicked: !prev.clicked };
+    //   } else if (vote === -1 && prev.clicked === false) {
+    //     patchArticleVote(articleid, vote);
+    //     return { ...prev, vote: prev.vote + vote, clicked: !prev.clicked };
+    //   } else {
+    //     return prev;
+    //   }
+    // });
 
     return;
   }

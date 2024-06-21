@@ -5,33 +5,26 @@ import { getAllCommentsByID, getArticleByID } from "../../apis/get-api";
 import { useParams } from "react-router-dom";
 import { FetchSelectedArticle } from "../comp_sets/fetchSelectedArticle";
 import { FetchSelectedComments } from "../comp_sets/fetchSelectedComments";
+import { CommentBox } from "../comp_sets/commentBox";
 
 
 
 export function Pg_ArticleByID() {
 
-  const [articleVote, setArticleVote] = useState({})
+  const [ORMyComment, setORMyComment] = useState({
+    submitted: false,
+    body:[]
+  })
 
   return (
     <main className="openedArticle">
       <FetchSelectedArticle  />
 
-      <div className="yourCommentBox">
-        <div className="redContainer">Comments</div>
-        <form className="yourComment">
-          <textarea
-            className="yourComment"
-            placeholder="leave comment here"
-            type="text"
-          ></textarea>
-
-          <button className="yourComment">Post Comment</button>
-        </form>
-      </div>
+      <CommentBox setORMyComment={setORMyComment} ORMyComment={ORMyComment}/>
 
      
 
-      <FetchSelectedComments/>
+      <FetchSelectedComments ORMyComment={ORMyComment}/>
 
     </main>
   );
