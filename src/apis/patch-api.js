@@ -12,7 +12,6 @@ export function patchArticleVote(article_id, vote) {
 
   return ncNewsApi
     .patch(`/articles/${article_id}`, voteFormat)
-    // .send(voteFormat)
     .then(({body}) => {
 
        return body
