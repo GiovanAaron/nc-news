@@ -9,7 +9,7 @@ import { getRandomLorem } from "./loremIpsumGen";
 
 
 
-export const FetchAllArticles = () => {
+export const FetchArticlesByTopic = ({topicName}) => {
   const [fetchedArticles, setFetchedArticles] = useState([]);
 
   const [isLoading, setIsLoading] = useState({
@@ -28,13 +28,18 @@ export const FetchAllArticles = () => {
     });
   }, []);
 
+
+
+  const filteredArticles = fetchedArticles.filter(article => article.topic === topicName)
+
+
   return (
     <div>
     {isLoading.allArticles ? (
       <p>Loading articles...</p>
     ) : (
     <ul className="featured">
-      {fetchedArticles.map((article, i) => {
+      {filteredArticles.map((article, i) => {
 
         return (
           <Link key={i} to={`/articles/${article.article_id}`}>

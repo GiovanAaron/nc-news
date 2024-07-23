@@ -31,6 +31,7 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
         title: article.title,
         topic: article.topic,
         votes: article.votes,
+        img: article.article_img_url
       });
     });
   }, []);
@@ -115,14 +116,17 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
     <div className="articleBox">
       <div className="redContainer">{fetchedArticle.title}</div>
       <p className="author_open"> by {fetchedArticle.author}</p>
-      <p className="articleText">
-        {fetchedArticle.body}Lorem ipsum dolor sit amet consectetur. Natoque non
-        sed urna habitasse ultrices. Arcu blandit condimentum ultricies risus
-        sit.
-        {fetchedArticle.body}Risus eu non at massa scelerisque sapien leo.
-        Auctor ornare morbi sed urna morbi porttitor.{fetchedArticle.body}
-      </p>
-      <div className="likeInfo">
+      <div className="articleximg">
+        <img className="articleOpened" src={fetchedArticle.img}></img>
+        <div className="textXvote">
+          <p className="articleText">
+            {fetchedArticle.body}Lorem ipsum dolor sit amet consectetur. Natoque non
+            sed urna habitasse ultrices. Arcu blandit condimentum ultricies risus
+            sit.
+            Risus eu non at massa scelerisque sapien leo.
+            Auctor ornare morbi sed urna morbi porttitor.{fetchedArticle.body}
+          </p>
+          <div className="likeInfo">
         <img
           onClick={() => rateArticle(1)}
           id="thumbsUp"
@@ -135,8 +139,11 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
           className="articleThumb"
           src={thumbsDown}
         />
-        <h4 className="likeCount">{fetchedArticle.votes + ORVote.vote}</h4>
+        <h4 className="likeCount">{ORVote.vote ? fetchedArticle.votes + ORVote.vote : fetchedArticle.votes}</h4>
       </div>
+        </div>
+      </div>
+     
     </div>
   );
 };
