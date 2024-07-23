@@ -35,3 +35,14 @@ export function getAllCommentsByID(article_id){
     })
 
 }
+
+export function getAllTopics(){
+
+  return ncNewsApi
+  .get(`/topics`)
+  .then(({data}) => {
+    
+    return data
+  })
+
+}

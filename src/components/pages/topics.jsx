@@ -1,9 +1,23 @@
 import { useState } from "react";
+import { FetchAllTopics } from "../comp_sets/fetchAllTopics";
 
 export function Pg_topics (){
 
     return (
-        <h3>this is the topics page</h3>
+        <div className="appHome">
+        <div className="redContainer_home">
+          <h1>Topics</h1>
+        </div>
+  
+        <main className="topics">
+
+
+        <FetchAllTopics/>
+        </main>
+     
+    
+
+    </div>
 
     )
 

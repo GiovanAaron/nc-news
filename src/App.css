@@ -38,6 +38,18 @@ ul.featured {
   flex-direction: row;
 }
 
+ul.topics{
+  display: flex;
+width: 67.3125rem;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+gap: 1.625rem;
+margin: 3rem
+
+
+}
+
 /* Link Styles */
 li a {
   text-decoration: none;
@@ -52,7 +64,7 @@ li a {
 /* Red Container Home */
 div.redContainer_home {
   flex: 1;
-  margin-left: 12rem;
+  margin-left: 15rem;
   display: flex;
   width: auto;
   max-height: 2.13rem;
@@ -125,11 +137,51 @@ h3.topicTag {
   text-align: right;
 }
 
-/* Profile Picture */
-.profilePic {
-  max-width: 7.4375rem;
+h3.topicSlug {
+  display: flex;
+width: 31.1875rem;
+padding: 0.625rem;
+justify-content: center;
+align-items: center;
+gap: 0.625rem;
+background: #F5F5F5;
+color: #000;
+font-family: Inter;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+
+}
+h3.topicDesc {
+  display: flex;
+width: 31.1875rem;
+padding: 0.625rem;
+justify-content:baseline;
+align-items: center;
+gap: 0.625rem;
+
+color: #7f7f7f;
+font-family: Inter;
+font-size: 1rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+
+
+}
+
+Link.noUnderline{
+  text-decoration: none;
+}
+
+
+/* Article Picture */
+.articlePic {
+  max-width: 10.4375rem;
   max-height: 8.25rem;
-  border-radius: 3.6875rem;
+  border-radius: 1.6875rem;
 }
 
 /* Article */
@@ -175,6 +227,7 @@ p.author_open {
   font-style: italic;
   font-weight: 400;
   line-height: normal;
+  margin-bottom: .5rem;
 
 }
 
@@ -227,10 +280,12 @@ div.articleBox{
 
 div.likeInfo{
 
+  margin-top: 1rem;
   display:flex;
   flex-direction: row;
   align-items: center;
   align-self: flex-end;
+  justify-content: end;
 
 }
 div.likeInfo_comment{
@@ -252,7 +307,7 @@ div.commentInfo {
 }
 
 div.yourCommentBox{
-  margin-top: 5rem;
+  margin-top: 3rem;
   
   width:100%;
 }
@@ -279,6 +334,18 @@ main.openedArticle {
   width: 70rem;
 height: 103.0625rem;
 flex-shrink: 0;
+}
+
+main.topics {
+  display: flex;
+width: 83.125rem;
+height: 50.0625rem;
+padding: 0rem 1.375rem 24.75rem 12rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 4.1875rem;
+flex-shrink: 0;
+
 }
 
 
@@ -347,4 +414,31 @@ li.comment{
   display: flex;
   flex-direction: column;
   border-bottom: 2px solid rgba(194, 194, 194, 0.726)
+}
+
+li.topics{
+  display: flex;
+align-items: center;
+
+}
+
+
+div.articleximg{
+
+  align-items: start;
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+
+}
+
+img.articleOpened{
+  width: 40%;
+  height: auto;
+  object-fit: contain;
+}
+
+div.textXvote{
+
+
 }
