@@ -10,11 +10,6 @@ import { patchArticleVote } from "../../apis/patch-api";
 export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
   let { articleid } = useParams();
 
-
-  const [articleThumb, setArticleThumb] = useState({
-    upVote: false,
-    downVote: false,
-  })
   
   const [fetchedArticle, setFetchedArticle] = useState({});
   const [ORVote, setORVote] = useState({
