@@ -13,6 +13,12 @@ import { patchArticleVote } from "../../apis/patch-api";
 export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
   let { articleid } = useParams();
 
+
+  const [articleThumb, setArticleThumb] = useState({
+    upVote: false,
+    downVote: false,
+  })
+  
   const [fetchedArticle, setFetchedArticle] = useState({});
   const [ORVote, setORVote] = useState({
     vote: 0,
@@ -43,14 +49,13 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
     setORVote((prev) => {
       switch (prev.vote) {
         case 1:
+
           if (vote === 1) {
             return {
               ...prev,
 
-              //  upVClicked: !prev.upVClicked,
-              //  downVClicked: false
-              //maybe add downVcCLICKED to false
             };
+          
           }
           if (vote === -1)
             return {
@@ -130,13 +135,13 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
         <img
           onClick={() => rateArticle(1)}
           id="thumbsUp"
-          className="articleThumb"
+          className={ORVote.upVClicked ? "articleThumbActivated" : "articleThumb"}
           src={thumbsUp}
         />
         <img
           onClick={() => rateArticle(-1)}
           id="thumbsDown"
-          className="articleThumb"
+          className={ORVote.downVClicked ? "articleThumbActivated" : "articleThumb"}
           src={thumbsDown}
         />
         <h4 className="likeCount">{ORVote.vote ? fetchedArticle.votes + ORVote.vote : fetchedArticle.votes}</h4>
