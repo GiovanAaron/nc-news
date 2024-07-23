@@ -5,9 +5,14 @@ import { FetchAllArticles } from "../comp_sets/fetchAllArticles";
 export function Pg_Articles (){
 
     return (
-        <div>
-            <h3>this is all the articles</h3>
+        <div className="appHome">
+
+<div className="redContainer_home">
+        <h1>All Articles</h1>
+      </div>
+            <main className="home">
             <FetchAllArticles/>
+            </main>
         </div>
 
     )

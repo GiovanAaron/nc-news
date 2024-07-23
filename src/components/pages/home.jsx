@@ -7,9 +7,16 @@ import { FetchFeaturedArticles } from "../comp_sets/fetchFeaturedArticles";
 
 
 
-getAllArticles()
+
+// getAllArticles()
 
 export function Pg_Home() {
+  const [isLoading, setIsLoading] = useState({
+    featured: true,
+    allArticles: true
+  
+  })
+
   return (
     <div className="appHome">
       <div className="redContainer_home">
@@ -19,7 +26,7 @@ export function Pg_Home() {
       <main className="home">
         
 
-        <FetchFeaturedArticles/>
+        { <FetchFeaturedArticles setIsLoading={setIsLoading} isLoading={isLoading}/> }
       </main>
      
     
