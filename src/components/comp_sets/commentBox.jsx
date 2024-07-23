@@ -18,13 +18,14 @@ export const CommentBox = ({setORMyComment, ORMyComment}) => {
     function handleSubmit(e){
         e.preventDefault()
 
-
+        if(!commentInput.comment) return
         postComment(articleid, commentInput.comment)
         setORMyComment((prev) => {
             
             return {...prev, body: [prev.body,commentInput], submitted: true }
 
         })
+        setCommentInput({comment: ""})
 
     }
 
