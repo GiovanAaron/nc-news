@@ -1,8 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import logo from "../../assets/logo.png";
 import {
-  getAllArticles,
-  getAllCommentsByID,
   getArticleByID,
 } from "../../apis/get-api";
 import { useEffect, useState } from "react";
@@ -41,23 +38,21 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
     if (vote === -1 && ORVote.downVClicked === true) return;
 
     setORVote((prev) => {
+
       switch (prev.vote) {
         case 1:
           if (vote === 1) {
             return {
               ...prev,
 
-              //  upVClicked: !prev.upVClicked,
-              //  downVClicked: false
-              //maybe add downVcCLICKED to false
             };
           }
           if (vote === -1)
             return {
               ...prev,
               vote: prev.vote + vote,
-              downVClicked: !prev.downVClicked,
-              upVClicked: !prev.upVClicked,
+              downVClicked: false,
+              upVClicked: false,
             };
           break;
 
@@ -66,8 +61,8 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
             return {
               ...prev,
               vote: prev.vote + vote,
-              upVClicked: !prev.upVClicked,
-              downVClicked: !prev.downVClicked,
+              upVClicked: false,
+              downVClicked: false,
             };
           if (vote === -1) return { ...prev };
 
@@ -78,15 +73,15 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
             return {
               ...prev,
               vote: prev.vote + vote,
-              upVClicked: !prev.upVClicked,
-              // downVClicked: true
+              upVClicked: true,
+              downVClicked: false
             };
           if (vote === -1)
             return {
               ...prev,
               vote: prev.vote + vote,
-              downVClicked: !prev.downVClicked,
-              // upVClicked:true
+              downVClicked: true,
+              upVClicked:false
             };
 
           return prev;
@@ -96,18 +91,6 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
     patchArticleVote(articleid, vote)
       .then((response) => {})
       .then((err) => {});
-
-    // setORVote((prev) => {
-    //   if (vote === 1 && prev.clicked === false) {
-    //     patchArticleVote(articleid, vote);
-    //     return { ...prev, vote: prev.vote + vote, clicked: !prev.clicked };
-    //   } else if (vote === -1 && prev.clicked === false) {
-    //     patchArticleVote(articleid, vote);
-    //     return { ...prev, vote: prev.vote + vote, clicked: !prev.clicked };
-    //   } else {
-    //     return prev;
-    //   }
-    // });
 
     return;
   }
