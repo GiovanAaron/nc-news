@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   getArticleByID,
 } from "../../apis/get-api";
@@ -10,6 +10,7 @@ import { patchArticleVote } from "../../apis/patch-api";
 export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
   let { articleid } = useParams();
 
+  
   const [fetchedArticle, setFetchedArticle] = useState({});
   const [ORVote, setORVote] = useState({
     vote: 0,
@@ -41,11 +42,13 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
 
       switch (prev.vote) {
         case 1:
+
           if (vote === 1) {
             return {
               ...prev,
 
             };
+          
           }
           if (vote === -1)
             return {
@@ -113,13 +116,13 @@ export const FetchSelectedArticle = ({ articleVote, setArticleVote }) => {
         <img
           onClick={() => rateArticle(1)}
           id="thumbsUp"
-          className="articleThumb"
+          className={ORVote.upVClicked ? "articleThumbActivated" : "articleThumb"}
           src={thumbsUp}
         />
         <img
           onClick={() => rateArticle(-1)}
           id="thumbsDown"
-          className="articleThumb"
+          className={ORVote.downVClicked ? "articleThumbActivated" : "articleThumb"}
           src={thumbsDown}
         />
         <h4 className="likeCount">{ORVote.vote ? fetchedArticle.votes + ORVote.vote : fetchedArticle.votes}</h4>

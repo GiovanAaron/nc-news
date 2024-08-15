@@ -349,12 +349,21 @@ flex-shrink: 0;
 }
 
 
+img.articleThumbActivated {
+
+  width: 2rem;
+  height: auto;
+  max-height: 2rem;
+  display: block;
+
+}
 img.articleThumb {
 
   width: 2rem;
   height: auto;
   max-height: 2rem;
   display: block;
+  opacity: 50%;
 
 }
 
